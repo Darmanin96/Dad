@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e55393f-595d-46fe-935b-62cdd35afbbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VentanaConMemoria/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../VentanaConMemoria/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/VentanaConMemoriaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/VentanaConMemoriaApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="6e55393f-595d-46fe-935b-62cdd35afbbe" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +86,7 @@
       <workItem from="1727176396976" duration="52000" />
       <workItem from="1727176504238" duration="9000" />
       <workItem from="1727341314799" duration="2477000" />
-      <workItem from="1727346263947" duration="2352000" />
+      <workItem from="1727346263947" duration="2353000" />
     </task>
     <servers />
   </component>
