@@ -5,25 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e55393f-595d-46fe-935b-62cdd35afbbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dad/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dad/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecogidaDatos/bindings/src/main/java/dad/bindings/ui/HelloBindins.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecogidaDatos/bindings/src/main/java/dad/bindings/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecogidaDatos/bindings/src/main/java/dad/bindings/ui/StageLocationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecogidaDatos/bindings/src/main/java/dad/bindings/ui/StageLocationApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/src/main/java/dad/AdivinaApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinApp/src/main/java/dad/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cel2farç/Cel2far.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cel2farç/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/src/main/java/dad/VentanaConMemoriaApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VentanaConMemoria/src/test/java/dad/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/src/test/java/dad/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dad/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../untitled/src/main/java/dad/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecogidaDatos/RecogidaDatos2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecogidaDatos/RecogidaDatos2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecogidaDatos/RecogidaDatos2/src/main/java/dad/RecogidaDatos/GsonSample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecogidaDatos/RecogidaDatos2/src/main/java/dad/RecogidaDatos/GsonSample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2mVarWdbHZqwxKuHLxbo1aCnoQy" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,14 +62,42 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/darma/RecogidaDatos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cel2farç.Main" />
+      <module name="Cel2Far" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cel2farç.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -56,10 +115,29 @@
       <option name="presentableId" value="Default" />
       <updated>1727164401520</updated>
       <workItem from="1727164402463" duration="105000" />
+      <workItem from="1727176396976" duration="52000" />
+      <workItem from="1727176504238" duration="9000" />
+      <workItem from="1727341314799" duration="2477000" />
+      <workItem from="1727346263947" duration="2352000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/cel2farç/Main.java</url>
+          <line>6</line>
+          <properties class="cel2farç.Main" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
