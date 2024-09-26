@@ -7,8 +7,12 @@ import javafx.scene.Scene;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.control.Slider;
+import javafx.geometry.Pos;
+import javafx.scene.paint.Color;
 
+import javafx.beans.property.IntegerProperty;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,6 +25,8 @@ public class VentanaConMemoriaApp extends Application {
     private DoubleProperty y = new SimpleDoubleProperty();
     private DoubleProperty with = new SimpleDoubleProperty();
     private DoubleProperty high = new SimpleDoubleProperty();
+
+    private IntegerProperty  red = new SimpleDoubleProperty();
 
     @Override
     public void init() throws Exception {
@@ -52,14 +58,33 @@ public class VentanaConMemoriaApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-
         Slider redslider = new Slider();
         redslider.setMin(0);
         redslider.setMax(255);
         redslider.setShowTickLabels(true);
-        
+        redslider.setMajorTickUnit(255);
+        redslider.setMinorTickCount(5);
+
+
+        Slider greenslider = new Slider();
+        greenslider.setMin(0);
+        greenslider.setMax(255);
+        greenslider.setShowTickLabels(true);
+        greenslider.setMajorTickUnit(255);
+        greenslider.setMinorTickCount(5);
+
+        Slider blueslider = new Slider();
+        blueslider.setMin(0);
+        blueslider.setMax(255);
+        blueslider.setShowTickLabels(true);
+        blueslider.setMajorTickUnit(255);
+        blueslider.setMinorTickCount(5);
+
 
         VBox root = new VBox();
+        root.setFillWidth(false);
+        root.setAlignment(Pos.CENTER);
+        root.getChildren().addAll(redslider, greenslider, blueslider);
 
         Scene scene = new Scene(root,with.get(),high.get());
         primaryStage.setX(x.get());
@@ -68,6 +93,16 @@ public class VentanaConMemoriaApp extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        x.bind(primaryStage.xProperty());
+        y.bind(primaryStage.yProperty());
+        with.bind(primaryStage.widthProperty());
+        high.bind(primaryStage.heightProperty());
+
+        redslider.valueProperty().bindBidirectional(red);
+        red.add(0,av,nv) -> {
+            Color o = Color.rgb(nv.inValue(),0,0);
+            root.setBackground(Background.fill(c));
+        }
     }
 
     @Override
