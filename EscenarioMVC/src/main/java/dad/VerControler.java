@@ -1,46 +1,47 @@
 package dad;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
-import jdk.jfr.Label;
 
 import java.io.IOException;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VerControler  implements Initializable {
+public class VerControler implements Initializable {
 
+    // Propiedad Integer para el valor
     private IntegerProperty value = new SimpleIntegerProperty();
-
-
 
     @FXML
     private VBox root;
 
-
     @FXML
     private Label valuelabel;
 
-
-    public verController(){
+    // Constructor que carga el archivo FXML correcto
+    public VerControler() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ModificarView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/VerView.fxml"));
             fxmlLoader.setController(this);
             fxmlLoader.load();
-        }catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
+    // Inicializa los enlaces de propiedades
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-            valueProgress.progressProperty().bind(value.divide(100));
-            valuelabel.textProperty().bind(value.asString());
+        // Enlazamos el valor de la etiqueta con la propiedad 'value'
+        valuelabel.textProperty().bind(value.asString());
     }
 
+    // Métodos getter y setter para 'value'
     public IntegerProperty getValue() {
         return value;
     }
@@ -49,6 +50,7 @@ public class VerControler  implements Initializable {
         this.value = value;
     }
 
+    // Métodos getter y setter para 'root'
     public VBox getRoot() {
         return root;
     }
@@ -57,6 +59,7 @@ public class VerControler  implements Initializable {
         this.root = root;
     }
 
+    // Métodos getter y setter para 'valuelabel'
     public Label getValuelabel() {
         return valuelabel;
     }
