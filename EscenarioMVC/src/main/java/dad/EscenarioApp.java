@@ -1,10 +1,15 @@
 package dad;
 
 import javafx.application.Application;
+import javafx.scene.control.*;
+import javafx.scene.control.skin.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.*;
 
 public class EscenarioApp extends Application {
+
+    private TextField textField;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
