@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXML;
 
@@ -14,7 +15,8 @@ import java.util.ResourceBundle;
 
 public class VerControler implements Initializable {
 
-    // Propiedad Integer para el valor
+
+
     private IntegerProperty value = new SimpleIntegerProperty();
 
     @FXML
