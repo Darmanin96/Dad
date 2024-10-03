@@ -20,8 +20,9 @@ public class EscenarioApp extends Application {
         verStage.setScene(new Scene(verControler.getRoot()));
         verStage.show();
 
-        // Enlazar la propiedad 'value' de ambos controladores para sincronizarlos
+
         verControler.getValue().bindBidirectional(modificarControler.getValue());
+
     }
 
 }
