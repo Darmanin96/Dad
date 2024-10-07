@@ -64,7 +64,7 @@ public class FriendController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
             friend.addListener(this::onFriendChanged);
-
+            
     }
 
     private void onFriendChanged(ObservableValue<? extends Friend> o, Friend ov, Friend nv) {
