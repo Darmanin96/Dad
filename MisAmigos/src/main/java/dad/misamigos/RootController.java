@@ -16,6 +16,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
+import javax.script.Bindings;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +24,9 @@ import java.util.ResourceBundle;
 public class RootController implements Initializable {
 
 
-    private final  ListProperty<Friend> friends = new SimpleListProperty<>(FXCollections.observableArrayList());
+    private final  ListProperty<Friend> friends = new SimpleListProperty<>(FXCollections.observableArrayList(
+            friend -> new Observable[] { friend.nameProperty(), friend.usernameProperty() }
+    ));
     private  final ObjectProperty<Friend> selectedFriend = new SimpleObjectProperty<>();
 
 
@@ -74,6 +77,7 @@ public class RootController implements Initializable {
                 selectedFriend.bind(friendList.getSelectionModel().selectedItemProperty());
                 enemyButtom.disableProperty().bind(selectedFriend.isNull());
                 selectedFriend.addListener(this::onSelectedFriendChanged);
+                friendController.friendProperty.bind(selectedFriend);
 
     }
 
@@ -96,5 +100,7 @@ public class RootController implements Initializable {
         friend.setName("Nombre");
         friend.setUsername("Apellidos");
         friends.add(friend);
+
+
     }
 }
