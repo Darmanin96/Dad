@@ -7,6 +7,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -94,12 +95,68 @@ public class RootController implements Initializable {
             friends.remove(selectedFriend.get());
     }
 
+    public ObservableList<Friend> getFriends() {
+        return friends.get();
+    }
+
+    public ListProperty<Friend> friendsProperty() {
+        return friends;
+    }
+
+    public Friend getSelectedFriend() {
+        return selectedFriend.get();
+    }
+
+    public ObjectProperty<Friend> selectedFriendProperty() {
+        return selectedFriend;
+    }
+
+    public Button getEnemyButtom() {
+        return enemyButtom;
+    }
+
+    public void setEnemyButtom(Button enemyButtom) {
+        this.enemyButtom = enemyButtom;
+    }
+
+    public Button getFriendButtom() {
+        return friendButtom;
+    }
+
+    public void setFriendButtom(Button friendButtom) {
+        this.friendButtom = friendButtom;
+    }
+
+    public ListView<Friend> getFriendList() {
+        return friendList;
+    }
+
+    public void setFriendList(ListView<Friend> friendList) {
+        this.friendList = friendList;
+    }
+
+    public void setEmptybox(VBox emptybox) {
+        this.emptybox = emptybox;
+    }
+
+    public void setFriendController(VBox friendController) {
+        this.friendController = friendController;
+    }
+
+    public void setRoot(BorderPane root) {
+        this.root = root;
+    }
+
     @FXML
     void onFriendAction(ActionEvent event) {
         Friend friend = new Friend();
         friend.setName("Nombre");
         friend.setUsername("Apellidos");
         friends.add(friend);
+        friendList.getSelectionModel().select(friend);
+
+
+
 
 
     }
