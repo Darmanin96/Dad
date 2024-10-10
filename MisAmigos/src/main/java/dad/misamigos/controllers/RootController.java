@@ -1,5 +1,6 @@
-package dad.misamigos;
+package dad.misamigos.controllers;
 
+import dad.misamigos.model.*;
 import javafx.beans.Observable;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
@@ -17,7 +18,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-import javax.script.Bindings;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -154,9 +154,6 @@ public class RootController implements Initializable {
         friend.setUsername("Apellidos");
         friends.add(friend);
         friendList.getSelectionModel().select(friend);
-
-
-
 
 
     }
