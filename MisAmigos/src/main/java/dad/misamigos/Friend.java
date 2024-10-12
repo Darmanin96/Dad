@@ -1,6 +1,5 @@
 package dad.misamigos;
 
-import com.google.gson.annotations.JsonAdapter;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -9,16 +8,14 @@ import javafx.scene.image.Image;
 
 import java.time.LocalDate;
 
-public class Friend  {
-
+public class Friend {
 
     private final StringProperty name = new SimpleStringProperty();
     private final StringProperty username = new SimpleStringProperty();
     private final ObjectProperty<LocalDate> birthDate = new SimpleObjectProperty<>();
     private final StringProperty email = new SimpleStringProperty();
-    private final StringProperty phoneNumer = new SimpleStringProperty();
+    private final StringProperty phoneNumber = new SimpleStringProperty();
     private final ObjectProperty<Image> photo = new SimpleObjectProperty<>();
-
 
     public String getName() {
         return name.get();
@@ -68,16 +65,16 @@ public class Friend  {
         this.email.set(email);
     }
 
-    public String getPhoneNumer() {
-        return phoneNumer.get();
+    public String getPhoneNumber() {
+        return phoneNumber.get();
     }
 
-    public StringProperty phoneNumerProperty() {
-        return phoneNumer;
+    public StringProperty phoneNumberProperty() {
+        return phoneNumber;
     }
 
-    public void setPhoneNumer(String phoneNumer) {
-        this.phoneNumer.set(phoneNumer);
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber.set(phoneNumber);
     }
 
     public Image getPhoto() {
@@ -96,5 +93,4 @@ public class Friend  {
     public String toString() {
         return getName() + " " + getUsername();
     }
-
 }

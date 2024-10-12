@@ -6,7 +6,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -22,9 +21,7 @@ import java.util.ResourceBundle;
 
 public class FriendController implements Initializable {
 
-
     private ObjectProperty<Friend> friend = new SimpleObjectProperty<>();
-
 
     @FXML
     private DatePicker birthDatePicker;
@@ -42,9 +39,6 @@ public class FriendController implements Initializable {
     private TextField surnameText;
 
     @FXML
-    private Button photoView;
-
-    @FXML
     private GridPane root;
 
     @FXML
@@ -52,7 +46,7 @@ public class FriendController implements Initializable {
 
     public FriendController() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ModificarView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FriendView.fxml"));
             loader.setController(this);
             loader.load();
         } catch (IOException e) {
@@ -60,42 +54,45 @@ public class FriendController implements Initializable {
         }
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-            friend.addListener(this::onFriendChanged);
-            
+        friend.addListener(this::onFriendChanged);
     }
 
     private void onFriendChanged(ObservableValue<? extends Friend> o, Friend ov, Friend nv) {
-        if (ov != null){
-            surnameText.textProperty().bindBidirectional(ov.usernameProperty());
-            nameText.textProperty().bindBidirectional(ov.nameProperty());
-            phoneText.textProperty().bindBidirectional(ov.phoneNumerProperty());
-            emailText.textProperty().bindBidirectional(ov.emailProperty());
-            birthDatePicker.valueProperty().bindBidirectional(ov.birthDateProperty());
+        if (ov != null) {
+            unbindFields(ov);
         }
-
-        if (nv != null){
-            nameText.textProperty().bindBidirectional(nv.nameProperty());
-            surnameText.textProperty().bindBidirectional(nv.usernameProperty());
-            birthDatePicker.valueProperty().bindBidirectional(nv.birthDateProperty());
-            phoneText.textProperty().bindBidirectional(nv.phoneNumerProperty());
-            emailText.textProperty().bindBidirectional(nv.emailProperty());
-
+        if (nv != null) {
+            bindFields(nv);
         }
+    }
 
+    private void bindFields(Friend friend) {
+        surnameText.textProperty().bindBidirectional(friend.usernameProperty());
+        nameText.textProperty().bindBidirectional(friend.nameProperty());
+        phoneText.textProperty().bindBidirectional(friend.phoneNumberProperty());
+        emailText.textProperty().bindBidirectional(friend.emailProperty());
+        birthDatePicker.valueProperty().bindBidirectional(friend.birthDateProperty());
+    }
+
+    private void unbindFields(Friend friend) {
+        surnameText.textProperty().unbindBidirectional(friend.usernameProperty());
+        nameText.textProperty().unbindBidirectional(friend.nameProperty());
+        phoneText.textProperty().unbindBidirectional(friend.phoneNumberProperty());
+        emailText.textProperty().unbindBidirectional(friend.emailProperty());
+        birthDatePicker.valueProperty().unbindBidirectional(friend.birthDateProperty());
     }
 
     @FXML
     void onPhotoAction(MouseEvent event) {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Seleccionar foto: ");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imagen", "*.png","*.jpg","*.jpeg"));
+        fileChooser.setTitle("Seleccionar foto");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Imágenes", "*.png", "*.jpg", "*.jpeg"));
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Todos los archivos", "*.*"));
-        File imageFilter = fileChooser.showOpenDialog(getRoot().getScene().getWindow());
-        if (imageFilter != null) {
-            Image photo = new Image(imageFilter.toURI().toString());
+        File imageFile = fileChooser.showOpenDialog(root.getScene().getWindow());
+        if (imageFile != null) {
+            Image photo = new Image(imageFile.toURI().toString());
             friend.get().setPhoto(photo);
         }
     }
@@ -103,7 +100,6 @@ public class FriendController implements Initializable {
     public GridPane getRoot() {
         return root;
     }
-
 
     public Friend getFriend() {
         return friend.get();
@@ -116,66 +112,4 @@ public class FriendController implements Initializable {
     public void setFriend(Friend friend) {
         this.friend.set(friend);
     }
-
-    public DatePicker getBirthDatePicker() {
-        return birthDatePicker;
-    }
-
-    public void setBirthDatePicker(DatePicker birthDatePicker) {
-        this.birthDatePicker = birthDatePicker;
-    }
-
-    public TextField getEmailText() {
-        return emailText;
-    }
-
-    public void setEmailText(TextField emailText) {
-        this.emailText = emailText;
-    }
-
-    public TextField getNameText() {
-        return nameText;
-    }
-
-    public void setNameText(TextField nameText) {
-        this.nameText = nameText;
-    }
-
-    public TextField getPhoneText() {
-        return phoneText;
-    }
-
-    public void setPhoneText(TextField phoneText) {
-        this.phoneText = phoneText;
-    }
-
-    public TextField getSurnameText() {
-        return surnameText;
-    }
-
-    public void setSurnameText(TextField surnameText) {
-        this.surnameText = surnameText;
-    }
-
-    public void setRoot(GridPane root) {
-        this.root = root;
-    }
-
-    public VBox getEmptyBox() {
-        return emptyBox;
-    }
-
-    public void setEmptyBox(VBox emptyBox) {
-        this.emptyBox = emptyBox;
-    }
-
-    public Button getPhotoView() {
-        return photoView;
-    }
-
-    public void setPhotoView(Button photoView) {
-        this.photoView = photoView;
-    }
-
-
 }
