@@ -1,5 +1,6 @@
-package dad.misamigos;
+package dad.misamigos.controllers;
 
+import dad.misamigos.model.*;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;

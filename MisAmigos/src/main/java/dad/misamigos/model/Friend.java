@@ -1,4 +1,4 @@
-package dad.misamigos;
+package dad.misamigos.model;
 
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;

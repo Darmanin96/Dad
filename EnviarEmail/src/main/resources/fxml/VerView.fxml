@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="100.59998779296876" minWidth="10.0" prefWidth="100.59998779296876" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="259.0000366210937" minWidth="10.0" prefWidth="144.40003662109376" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="259.0000366210937" minWidth="10.0" prefWidth="97.80001220703122" />
+        <ColumnConstraints hgrow="ALWAYS" maxWidth="132.9999877929688" minWidth="10.0" prefWidth="107.80001220703127" />
+      <ColumnConstraints hgrow="ALWAYS" maxWidth="89.4000366210937" minWidth="10.0" prefWidth="64.5999877929687" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="55.0" minHeight="5.199987792968749" prefHeight="20.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="20.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="20.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="20.0" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="20.0" vgrow="ALWAYS" />
+        <RowConstraints minHeight="10.0" vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <!-- Etiquetas -->
+        <Label alignment="CENTER" text="Servidor SMTP:" textAlignment="RIGHT" />
+        <Label alignment="CENTER" text="Usar conexión SSL:" GridPane.rowIndex="1" />
+        <Label alignment="CENTER" text="Remitente(From)" GridPane.rowIndex="2" />
+        <Label alignment="CENTER" text="Destinatario(To)" GridPane.rowIndex="3" />
+        <Label alignment="CENTER" text="Asunto(Subject)" GridPane.rowIndex="4" />
+
+        <!-- Área de texto para el mensaje -->
+        <TextArea prefHeight="68.0" prefWidth="201.0" promptText="Mensaje" GridPane.columnSpan="4" GridPane.rowIndex="5" />
+
+        <!-- Botones -->
+        <Button text="Enviar" GridPane.columnIndex="5" />
+        <Button text="Vaciar" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+        <Button text="Cerrar" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+
+        <!-- Campos de texto y otros controles -->
+        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="375.0" promptText="Nombre o IP del servidor" GridPane.columnIndex="1" GridPane.columnSpan="3" />
+        <CheckBox GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField maxWidth="-Infinity" prefHeight="26.0" prefWidth="262.0" promptText="Email del remitente" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+        <TextField promptText="Email del destinatario" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+        <TextField promptText="Asunto del mensaje" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+        <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="65.0" promptText="Puerto" GridPane.columnIndex="4" />
+      <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+    </children>
+</GridPane>
