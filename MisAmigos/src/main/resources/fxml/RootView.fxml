@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -13,11 +14,15 @@
 
 <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="599.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <ListView fx:id="friendList" prefHeight="369.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </ListView>
+      <SplitPane BorderPane.alignment="CENTER">
+         <items>
+            <ListView fx:id="friendList" prefHeight="369.0" prefWidth="200.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ListView>
+         </items>
+      </SplitPane>
    </left>
    <top>
       <HBox prefHeight="37.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="CENTER">
@@ -45,11 +50,30 @@
       </HBox>
    </top>
    <center>
-      <VBox fx:id="emptyBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <FontIcon iconLiteral="fab-cloudfare" iconSize="25" />
-            <Label text="Seleccione un amigo de la lista" />
-         </children>
-      </VBox>
+      <SplitPane BorderPane.alignment="CENTER">
+         <items>
+            <BorderPane>
+               <center>
+                  <VBox fx:id="emptyBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <FontIcon iconLiteral="fab-cloudfare" iconSize="25" />
+                        <Label text="Seleccione un amigo de la lista" />
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </items>
+      </SplitPane>
    </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="26.0" prefWidth="599.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="friendCountLabel" alignment="BASELINE_LEFT" contentDisplay="CENTER" text="0" />
+            <Label alignment="BASELINE_CENTER" contentDisplay="RIGHT" text="Amigos" textAlignment="JUSTIFY" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </HBox>
+   </bottom>
 </BorderPane>

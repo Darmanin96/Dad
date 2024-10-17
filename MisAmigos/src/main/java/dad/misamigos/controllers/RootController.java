@@ -69,15 +69,14 @@ public class RootController implements Initializable {
         friendList.itemsProperty().bind(friends);
         selectedFriend.bind(friendList.getSelectionModel().selectedItemProperty());
         enemyButton.disableProperty().bind(selectedFriend.isNull());
-        selectedFriend.addListener((o, ov, nv) -> {
+        selectedFriend.addListener((_, ov, nv) -> {
             if (nv != null) {
-                // Handle logic when a friend is selected
+
             }
         });
     }
 
     @FXML
-<<<<<<< HEAD:MisAmigos/src/main/java/dad/misamigos/RootController.java
     void onAddFriendAction(ActionEvent event) {
         friends.add(new Friend());
     }
@@ -85,7 +84,7 @@ public class RootController implements Initializable {
     @FXML
     void onRemoveFriendAction(ActionEvent event) {
         friends.remove(selectedFriend.get());
-=======
+
     void onFriendAction(ActionEvent event) {
         Friend friend = new Friend();
         friend.setName("Nombre");
@@ -93,7 +92,5 @@ public class RootController implements Initializable {
         friends.add(friend);
         friendList.getSelectionModel().select(friend);
 
-
->>>>>>> 8312e2a51e170f8fa00e7714c0634a47852532af:MisAmigos/src/main/java/dad/misamigos/controllers/RootController.java
     }
 }

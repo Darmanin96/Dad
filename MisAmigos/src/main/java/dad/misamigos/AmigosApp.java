@@ -18,13 +18,13 @@ import java.time.*;
 
 public class AmigosApp extends Application {
 
-<<<<<<< HEAD
+
     private final RootController rootController = new RootController();
 
     @Override
     public void init() throws Exception {
         // Inicialización adicional si es necesario
-=======
+
     private static final File DATA_DIR = new File(("user.home"),".MisAmigos");
     private static final File FRIEND_FILE = new File(DATA_DIR,"friends.json");
 
@@ -45,26 +45,25 @@ public class AmigosApp extends Application {
             rootController.getFriends().setAll(friends);
             System.out.println(friends.size() + "contactos leídos desde el fichero: " + FRIEND_FILE);
         }
->>>>>>> 8312e2a51e170f8fa00e7714c0634a47852532af
+
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-<<<<<<< HEAD
+
         primaryStage.setTitle("Mis Amigos");
         primaryStage.setScene(new Scene(rootController.getRoot()));
-        primaryStage.show();
-=======
+
         Stage stage = new Stage();
         stage.setTitle("Mis Amigos");
         stage.setScene(new Scene(rootController.getRoot()));
         stage.show();
->>>>>>> 8312e2a51e170f8fa00e7714c0634a47852532af
+
     }
 
     @Override
     public void stop() throws Exception {
-<<<<<<< HEAD
+
         File fileFriend = new File("friends.json");
         Gson gson = FxGson.fullBuilder()
                 .setPrettyPrinting()
@@ -72,7 +71,7 @@ public class AmigosApp extends Application {
         String json = gson.toJson(rootController.getFriends());
         Files.writeString(fileFriend.toPath(), json, StandardCharsets.UTF_8);
         System.out.println("Cambios guardados en el fichero " + fileFriend);
-=======
+
         if (!DATA_DIR.exists()) {
             DATA_DIR.mkdir();
         }else {
@@ -80,6 +79,5 @@ public class AmigosApp extends Application {
             Files.writeString(FRIEND_FILE.toPath(), json , StandardCharsets.UTF_8);
             System.out.println("Cambios guardados en el fichero " + FRIEND_FILE);
         }
->>>>>>> 8312e2a51e170f8fa00e7714c0634a47852532af
     }
 }
