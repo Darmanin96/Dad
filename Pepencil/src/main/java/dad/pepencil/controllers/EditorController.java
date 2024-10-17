@@ -81,6 +81,7 @@ public class EditorController implements Initializable {
     public void open(){
         try {
             this.content.set(Files.readString(file.get().toPath()));
+            this.hasChanges.set(false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
