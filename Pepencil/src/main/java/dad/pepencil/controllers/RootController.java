@@ -1,5 +1,6 @@
 package dad.pepencil.controllers;
 
+import dad.pepencil.*;
 import javafx.beans.property.*;
 import javafx.collections.*;
 import javafx.event.*;
@@ -17,7 +18,6 @@ public class RootController implements Initializable {
 
 
     private ObjectProperty<Tab> selectedTab = new SimpleObjectProperty<>();
-    private MapProperty<Tab,EditorController> controllers = new SimpleMapProperty<>(FXCollections.observableHashMap());
 
 
     @Override
@@ -50,24 +50,26 @@ public class RootController implements Initializable {
     }
 
     private EditorController newFile(){
-        EditorController editorController = new EditorController();
-        Tab newTab = new Tab();
-        newTab.setContent(editorController.getRoot());
+        PepencilTab newTab = new PepencilTab();
         editionTabPane.getTabs().add(newTab);
-        controllers.put(newTab,editorController);
         editionTabPane.getSelectionModel().select(newTab);
-        return editorController;
+        return newTab.getController();
 
     }
 
     @FXML
     void onCutAction(MouseEvent event) {
-        controllers.get(selectedTab.get()).cut();
+        getSelectedEditor().cut();
+    }
+
+    @FXML
+    void onPasteAction(ActionEvent event) {
+        getSelectedEditor().paste();
     }
 
     @FXML
     void onCopyAction(ActionEvent event) {
-        controllers.get(selectedTab.get()).copy();
+        getSelectedEditor().copy();
     }
 
 
@@ -77,23 +79,39 @@ public class RootController implements Initializable {
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.*"));
         File file = fileChooser.showOpenDialog(root.getScene().getWindow());
         if(file != null){
-            EditorController controller = newFile();
-            controller.setFile(file);
+            PepencilTab newTab = new PepencilTab();
+
         }
+    }
+
+    private EditorController getSelectedEditor(){
+        return null;
     }
 
 
     @FXML
     void onSaveAction(ActionEvent event) {
-        Tab seleTab = editionTabPane.getSelectionModel().getSelectedItem();
-        EditorController controller = controllers.get(seleTab);
+        if (getSelectedEditor().getFile() != null){
+            getSelectedEditor().save();
+        }else {
+            onSaveAction(event);
+        }
+
 
     }
 
     @FXML
     void onSaveCommonAction(ActionEvent event) {
-
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Todos los archivos", "*.*"));
+        if (getSelectedEditor().getFile() != null){
+           // getSelectedEditor().setFile();
+        }
     }
+
+
+
+
 
     public TabPane getEditionTabPane() {
         return editionTabPane;
@@ -105,6 +123,10 @@ public class RootController implements Initializable {
 
     public BorderPane getRoot() {
         return root;
+    }
+
+    private PepencilTab getSelectedTab() {
+        return (PepencilTab) selectedTab.get();
     }
 
     public void setRoot(BorderPane root) {

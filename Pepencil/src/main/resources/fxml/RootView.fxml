@@ -105,7 +105,7 @@
                         <Tooltip text="Empty Tooltip" />
                      </tooltip>
                      <graphic>
-                        <FontIcon iconLiteral="mdi2c-close" iconSize="25" />
+                        <FontIcon iconLiteral="mdi2c-close" iconSize="25" onDragDetected="#onCloseAction" />
                      </graphic></Button>
                   <Separator orientation="VERTICAL" />
                   <Button mnemonicParsing="false" onAction="#onCopyAction" text="Copiar">
@@ -118,7 +118,7 @@
                         <Tooltip text="Empty Tooltip" />
                      </tooltip></Button>
                   <FontIcon />
-                  <Button mnemonicParsing="false" text="Pegar">
+                  <Button mnemonicParsing="false" onAction="#onPasteAction" text="Pegar">
                      <tooltip>
                         <Tooltip text="Empty Tooltip" />
                      </tooltip></Button>
