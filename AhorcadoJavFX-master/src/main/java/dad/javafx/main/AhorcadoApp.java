@@ -149,11 +149,8 @@ public class AhorcadoApp extends Application {
 			file = new FileOutputStream(PALABRASURL);
 			out = new OutputStreamWriter(file, StandardCharsets.UTF_8);
 			writer = new BufferedWriter(out);
-			
-			// Todas las palabras estarán en mayúsculas, si de antes había un fichero con otras palabras nos
-			// aseguramos de que se guarden en mayúsculas
 			for( String str : rootController.getPalabrasList()) {
-				writer.write(str.toUpperCase()); // Guardamos las palabras por lineas
+				writer.write(str.toUpperCase());
 				writer.newLine();
 			}
 			

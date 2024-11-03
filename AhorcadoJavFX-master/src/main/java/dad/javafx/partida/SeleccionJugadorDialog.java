@@ -71,7 +71,6 @@ public class SeleccionJugadorDialog extends Dialog<Jugador> {
 		setResultConverter( bt -> {
 			
 			if( bt.getButtonData() == ButtonData.OK_DONE ) {
-				// Buscamos en la lista de jugadores aquel nombre que coincida
 				String jName = listaJugador.getSelectionModel().getSelectedItem();
 				return playersList.stream().filter( j -> j.getNombre().equals(jName)).findFirst().get();
 			}

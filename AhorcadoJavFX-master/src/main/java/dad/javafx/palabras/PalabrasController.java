@@ -81,7 +81,7 @@ public class PalabrasController implements Initializable {
 			alert.showAndWait();
 			
 		} else if( palabra.isPresent() ) {
-			list.add(palabra.get().toUpperCase()); // Todas las palabras estarán en mayúsculas
+			list.add(palabra.get().toUpperCase());
 		}
 	}
 	
