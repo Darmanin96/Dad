@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml" fx:controller="dad.controllers.PartidaController">
+    <tabs>
+        <Tab text="Partida">
+            <AnchorPane>
+                <fx:include source="GameView.fxml" />
+            </AnchorPane>
+        </Tab>
+        <Tab text="Palabras">
+            <AnchorPane>
+                <fx:include source="WordListView.fxml" />
+            </AnchorPane>
+        </Tab>
+        <Tab text="Puntuaciones">
+            <AnchorPane>
+                <fx:include source="ScoreView.fxml" />
+            </AnchorPane>
+        </Tab>
+    </tabs>
+</TabPane>

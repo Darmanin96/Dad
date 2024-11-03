@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ventana2Controller" alignment="CENTER" spacing="20">
+    <Button fx:id="btnVolverVentana1" text="Volver a Ventana 1" onAction="#volverVentana1"/>
+</VBox>

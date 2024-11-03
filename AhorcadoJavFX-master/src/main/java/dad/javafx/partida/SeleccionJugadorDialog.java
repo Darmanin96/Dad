@@ -18,13 +18,6 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
-/**
- * Cuadro de diálogo que nos permite seleccionar a un jugador ya existente o crear
- * un jugador nuevo, en ambos casos será necesario tener la lista de jugadores.
- *  
- * @author David Fernández Nieves
- *
- */
 public class SeleccionJugadorDialog extends Dialog<Jugador> {
 
 	private Button createBt, okButton;
@@ -51,27 +44,21 @@ public class SeleccionJugadorDialog extends Dialog<Jugador> {
 		listaJugador = new ListView<>();
 		listaJugador.setPrefHeight(128.f);
 		
-		// Preparamos nuestras listas
+
 		oPlayersList = jugadores.get();
 		playersList = new SimpleListProperty<>(oPlayersList);
-		
-		// Cargamos los nombres de los jugadores
+
 		for( Jugador j : playersList.get()) {
 			nombreJugadores.add(j.getNombre());
 		}
 		
 		listaJugador.itemsProperty().bind(nombreJugadores);
-		
-		// Cualquier cambio en una de las listas se reflejará aquí
 		playersList.bindBidirectional(jugadores);
 		
 		HBox root = new HBox(5, listaJugador, createBt);
 		root.setPadding( new Insets(10) );
 		root.setFillHeight(false);
-		
-		// Cargamos nuestro contenido
 		getDialogPane().setContent(root);
-		
 		ButtonType oButton = new ButtonType( "Aceptar", ButtonData.OK_DONE);
 		ButtonType cButton = new ButtonType( "Cancelar", ButtonData.CANCEL_CLOSE);
 		getDialogPane().getButtonTypes().addAll(oButton, cButton);
@@ -93,11 +80,7 @@ public class SeleccionJugadorDialog extends Dialog<Jugador> {
 	
 		});
 	}
-	
-	/**
-	 * Se crea un nuevo jugador y se añade a la lista de jugadores, por
-	 * tanto empieza con puntuación 0.
-	 */
+
 	private void createJugador() {
 		
 		TextInputDialog dialog = new TextInputDialog();

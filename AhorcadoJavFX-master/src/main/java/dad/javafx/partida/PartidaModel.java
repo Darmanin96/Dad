@@ -12,24 +12,14 @@ public class PartidaModel {
 
 	private IntegerProperty puntos = new SimpleIntegerProperty();
 	private IntegerProperty vidas = new SimpleIntegerProperty();
-	
-	/**
-	 * La frase o palabra a adivinar
-	 */
+
 	private StringProperty adivinar = new SimpleStringProperty(); 
-	/**
-	 * Las letras usadas
-	 */
+
 	private StringProperty usado = new SimpleStringProperty("");
 	
-	/**
-	 * Palabra o frase a intentar adivinar
-	 */
+
 	private StringProperty intento = new SimpleStringProperty();
-	
-	/**
-	 * Imagen del ahorcado
-	 */
+
 	private ObjectProperty<Image> image= new SimpleObjectProperty<>();
 
 

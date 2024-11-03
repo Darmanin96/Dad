@@ -114,10 +114,7 @@ public class AhorcadoApp extends Application {
 			
 			String line;
 			while( (line = reader.readLine()) != null ) {
-				
-				// Limpiamos los espacios
 				line.trim();
-
 				pList.add(line);
 			}
 			

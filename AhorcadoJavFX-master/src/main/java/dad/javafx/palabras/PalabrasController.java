@@ -22,15 +22,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.BorderPane;
 
-/**
- * Controlador de la pestaña de "palabras" que básicamente consiste en una lista donde
- * se nos muestran las palabras del archivo palabras.txt y se van a procesar en el juego.
- * Se tienen implementados los métodos para insertar y quitar palabras de la lista, cualquier
- * cambio en ella se quedará guardado al cerrar la aplicación.
- * 
- * @author David Fernández Nieves
- *
- */
 public class PalabrasController implements Initializable {
 
 	
@@ -45,20 +36,13 @@ public class PalabrasController implements Initializable {
 
 	@FXML
 	private ListView<String> palabrasList;	
-	
-	//----------------------------------------------------------
-	
-	// Model
+
 	private ObservableList<String> oList =  FXCollections.observableArrayList(new ArrayList<String>());
 	private ListProperty<String> list = new SimpleListProperty<>(oList); 
 	
 	private StringProperty palabraSelected = new SimpleStringProperty();
 	
-	/**
-	 * 
-	 * @param parentRoot El controlador principal
-	 * @throws IOException Error en la carga del FXML PalabrasFXML.fxml
-	 */
+
 	public PalabrasController() throws IOException {
 				
 		FXMLLoader loader = new FXMLLoader( getClass().getResource("/fxml/PalabrasFXML.fxml"));
@@ -80,10 +64,7 @@ public class PalabrasController implements Initializable {
 		removeBt.setOnAction( evt -> quitarPalabra() );
 	}
 	
-	/**
-	 * Insertamos una nueva palabra en la lista. La palabra
-	 * debe tener al menos 3 caracteres.
-	 */
+
 	private void insertarPalabra() {
 		
 		TextInputDialog dialog = new TextInputDialog();
@@ -104,9 +85,7 @@ public class PalabrasController implements Initializable {
 		}
 	}
 	
-	/**
-	 * Quitamos la palabra seleccionada en la lista.
-	 */
+
 	private void quitarPalabra() {
 		
 		// Ya sabemos que este botón solo estará activo si se ha 
