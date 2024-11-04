@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <TabPane fx:id="TabAlumn" side="LEFT" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab fx:id="Group" onSelectionChanged="#onGroupChange" text="Grupo" />
+                <Tab fx:id="Alumn" onSelectionChanged="#onAlumnChanged" text="Alumnos" />
+            </tabs>
+        </TabPane>
+    </left>
+    <top>
+        <ToolBar onDragDetected="#onSaveAction" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <Button fx:id="New" mnemonicParsing="false" onAction="#onNewAction" text="Nuevo" />
+                <TextField fx:id="NameFichero" onAction="#NombreFichero" promptText="Nombre del fichero" />
+                <Button fx:id="Save" defaultButton="true" mnemonicParsing="false" text="Guardar" />
+            </items>
+        </ToolBar>
+    </top>
+    <center>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="alumnoTableView">
+                    <columns>
+                        <TableColumn fx:id="nombreColumn" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="apellidosColumn" prefWidth="75.0" text="Apellidos" />
+                        <TableColumn fx:id="fechaNacimientoColumn" prefWidth="135.19997253417966" text="Fecha de Nacimiento" />
+                    </columns>
+                </TableView>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label layoutX="15.0" layoutY="180.0" text="Seleccione un alumno de la tabla de la izquierda" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </GridPane>
+    </center>
+    <bottom>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.79998779296875" minWidth="10.0" prefWidth="316.79998779296875" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="283.20001220703125" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="325.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onNewAction" text="Nuevo">
+                            <HBox.margin>
+                                <Insets bottom="6.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/add-32x32.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                            </padding>
+                        </Button>
+                        <Button fx:id="Delete" mnemonicParsing="false" onAction="#onDeleteAction" prefHeight="29.0" prefWidth="83.0" text="Eliminar">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/del-32x32.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+    </bottom>
+</BorderPane>
