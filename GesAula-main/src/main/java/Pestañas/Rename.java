@@ -15,12 +15,6 @@ public class Rename implements Initializable {
     private Label ActitudLabel;
 
     @FXML
-    private Label PracticaLabel;
-
-    @FXML
-    private Label examenLabel;
-
-    @FXML
     private Tab Alumno;
 
     @FXML
@@ -33,10 +27,14 @@ public class Rename implements Initializable {
     private Button New;
 
     @FXML
+    private Label PracticaLabel;
+
+    @FXML
     private Button Save;
 
     @FXML
-    private BorderPane root;
+    private TabPane TabAlumn;
+
     @FXML
     private Slider actitud;
 
@@ -45,6 +43,9 @@ public class Rename implements Initializable {
 
     @FXML
     private Slider examen;
+
+    @FXML
+    private Label examenLabel;
 
     @FXML
     private DatePicker finCurso;
@@ -56,76 +57,34 @@ public class Rename implements Initializable {
     private Slider practica;
 
     @FXML
-    void onNewAction(ActionEvent event) {
-        nuevo();
-    }
-
-    @FXML
-    void onSaveAction(ActionEvent event) {
-            guardar();
-    }
-
-    @FXML
-    private TabPane TabAlumn;
+    private BorderPane root;
 
     @FXML
     void onCangedGroup(ActionEvent event) {
-        TabAlumn.getSelectionModel().select(Alumno);
+
     }
 
     @FXML
     void onChangedAlumn(ActionEvent event) {
-        TabAlumn.getSelectionModel().select(Group);
 
     }
 
+    @FXML
+    void onNewAction(ActionEvent event) {
 
-    public Slider getActitud() {
-        return actitud;
     }
 
-    public void setActitud(Slider actitud) {
-        this.actitud = actitud;
+    @FXML
+    void onSaveAction(ActionEvent event) {
+
     }
 
-    public TextField getDenominacion() {
-        return denominacion;
+    public Label getActitudLabel() {
+        return ActitudLabel;
     }
 
-    public void setDenominacion(TextField denominacion) {
-        this.denominacion = denominacion;
-    }
-
-    public Slider getExamen() {
-        return examen;
-    }
-
-    public void setExamen(Slider examen) {
-        this.examen = examen;
-    }
-
-    public DatePicker getFinCurso() {
-        return finCurso;
-    }
-
-    public void setFinCurso(DatePicker finCurso) {
-        this.finCurso = finCurso;
-    }
-
-    public DatePicker getInicioCurso() {
-        return inicioCurso;
-    }
-
-    public void setInicioCurso(DatePicker inicioCurso) {
-        this.inicioCurso = inicioCurso;
-    }
-
-    public Slider getPractica() {
-        return practica;
-    }
-
-    public void setPractica(Slider practica) {
-        this.practica = practica;
+    public void setActitudLabel(Label actitudLabel) {
+        ActitudLabel = actitudLabel;
     }
 
     public Tab getAlumno() {
@@ -160,6 +119,14 @@ public class Rename implements Initializable {
         New = aNew;
     }
 
+    public Label getPracticaLabel() {
+        return PracticaLabel;
+    }
+
+    public void setPracticaLabel(Label practicaLabel) {
+        PracticaLabel = practicaLabel;
+    }
+
     public Button getSave() {
         return Save;
     }
@@ -168,28 +135,36 @@ public class Rename implements Initializable {
         Save = save;
     }
 
-    public BorderPane getRoot() {
-        return root;
+    public TabPane getTabAlumn() {
+        return TabAlumn;
     }
 
-    public void setRoot(BorderPane root) {
-        this.root = root;
+    public void setTabAlumn(TabPane tabAlumn) {
+        TabAlumn = tabAlumn;
     }
 
-    public Label getActitudLabel() {
-        return ActitudLabel;
+    public Slider getActitud() {
+        return actitud;
     }
 
-    public void setActitudLabel(Label actitudLabel) {
-        ActitudLabel = actitudLabel;
+    public void setActitud(Slider actitud) {
+        this.actitud = actitud;
     }
 
-    public Label getPracticaLabel() {
-        return PracticaLabel;
+    public TextField getDenominacion() {
+        return denominacion;
     }
 
-    public void setPracticaLabel(Label practicaLabel) {
-        PracticaLabel = practicaLabel;
+    public void setDenominacion(TextField denominacion) {
+        this.denominacion = denominacion;
+    }
+
+    public Slider getExamen() {
+        return examen;
+    }
+
+    public void setExamen(Slider examen) {
+        this.examen = examen;
     }
 
     public Label getExamenLabel() {
@@ -200,12 +175,36 @@ public class Rename implements Initializable {
         this.examenLabel = examenLabel;
     }
 
-    public TabPane getTabAlumn() {
-        return TabAlumn;
+    public DatePicker getFinCurso() {
+        return finCurso;
     }
 
-    public void setTabAlumn(TabPane tabAlumn) {
-        TabAlumn = tabAlumn;
+    public void setFinCurso(DatePicker finCurso) {
+        this.finCurso = finCurso;
+    }
+
+    public DatePicker getInicioCurso() {
+        return inicioCurso;
+    }
+
+    public void setInicioCurso(DatePicker inicioCurso) {
+        this.inicioCurso = inicioCurso;
+    }
+
+    public Slider getPractica() {
+        return practica;
+    }
+
+    public void setPractica(Slider practica) {
+        this.practica = practica;
+    }
+
+    public BorderPane getRoot() {
+        return root;
+    }
+
+    public void setRoot(BorderPane root) {
+        this.root = root;
     }
 
     @Override

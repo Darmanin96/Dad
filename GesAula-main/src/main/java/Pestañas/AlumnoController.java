@@ -2,7 +2,6 @@ package Pestañas;
 
 import dad.gesaula.ui.model.*;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
@@ -38,18 +37,19 @@ public class AlumnoController implements Initializable {
     private TabPane TabAlumn;
 
     @FXML
+    private TableView<?> alumnoTableView;
+
+    @FXML
+    private TableColumn<?, ?> apellidosColumn;
+
+    @FXML
+    private TableColumn<?, ?> fechaNacimientoColumn;
+
+    @FXML
+    private TableColumn<?, ?> nombreColumn;
+
+    @FXML
     private BorderPane root;
-
-    @FXML
-    private TableView<Alumno> alumnoTableView;
-    @FXML
-    private TableColumn<Alumno, String> nombreColumn;
-    @FXML
-    private TableColumn<Alumno, String> apellidosColumn;
-    @FXML
-    private TableColumn<Alumno, LocalDate> fechaNacimientoColumn;
-
-    private ObservableList<Alumno> alumnos; // Lista de alumnos
 
     public AlumnoController() {
         try {
@@ -63,20 +63,12 @@ public class AlumnoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        alumnos = FXCollections.observableArrayList();
-        alumnoTableView.setItems(alumnos);
-        nombreColumn.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
-        apellidosColumn.setCellValueFactory(cellData -> cellData.getValue().apellidosProperty());
-        fechaNacimientoColumn.setCellValueFactory(cellData -> cellData.getValue().fechaNacimientoProperty());
+
     }
 
     @FXML
     void onNewAction(ActionEvent event) {
-        Alumno nuevoAlumno = new Alumno();
-        nuevoAlumno.setNombre("Sin nombre");
-        nuevoAlumno.setApellidos("Sin apellidos");
-        nuevoAlumno.setFechaNacimiento(LocalDate.now());
-        alumnos.add(nuevoAlumno);
+
     }
 
     @FXML
@@ -91,10 +83,7 @@ public class AlumnoController implements Initializable {
 
     @FXML
     void onDeleteAction(ActionEvent event) {
-        Alumno selectedAlumno = alumnoTableView.getSelectionModel().getSelectedItem();
-        if (selectedAlumno != null) {
-            alumnos.remove(selectedAlumno);
-        }
+
     }
 
     @FXML

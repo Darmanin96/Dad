@@ -8,7 +8,7 @@ import javafx.stage.*;
 public class GesAulaApp  extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        YourController root = new YourController();
+        Rename root = new Rename();
         Stage window = new Stage();
         window.setTitle("GesAula");
         window.setScene(new Scene(root.getRoot()));
