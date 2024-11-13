@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="root"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="Personal" text="Personal">
+            <content>
+              <fx:include source="PestañaView.fxml" />
+            </content>
+          </Tab>
+          <Tab fx:id="Contacto" text="Contacto">
+            <content>
+
+            </content>
+          </Tab>
+            <Tab fx:id="Formacion" text="Formación">
+               <content>
+                  <fx:include source="TablaFormacionView.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="Experiencia" text="Experiencia">
+               <content>
+                  <fx:include source="TablaExperienciaView.fxml" />
+               </content>
+            </Tab>
+            <Tab fx:id="Conocimientos" text="Conociminetos">
+               <content>
+                  <fx:include source="TablaConocimientoView.fxml" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <MenuBar prefHeight="23.0" prefWidth="605.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+                  <MenuItem fx:id="New" mnemonicParsing="false" onAction="#onNewAction" text="Nuevo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="Open" mnemonicParsing="false" onAction="#onActionOpen" text="Abrir">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="Save" mnemonicParsing="false" onAction="#onActionSave" text="Guardar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="saveAs" mnemonicParsing="false" onAction="#onSaveAsAction" text="Guardar como..." />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="Exit" mnemonicParsing="false" onAction="#onActionExit" text="Salir">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Acerda de..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
