@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.gesaula.ui.controller.AlumnController">
+    <center>
+          <TableView fx:id="tableAlumn" prefHeight="355.0" prefWidth="333.0">
+              <columns>
+                  <TableColumn fx:id="Nombre" prefWidth="99.20001220703125" text="Nombre" />
+                  <TableColumn fx:id="Apellidos" prefWidth="86.4000244140625" text="Apellidos" />
+                  <TableColumn fx:id="fechaNacimiento" minWidth="4.0" prefWidth="111.20001220703125" text="Fecha de nacimiento" />
+                  <TableColumn fx:id="sexoColumn" minWidth="0.0" prefWidth="80.0" text="Sexo" />
+                  <TableColumn fx:id="Repite" minWidth="0.0" prefWidth="60.0" text="Repite" />
+              </columns>
+          </TableView>
+    </center>
+   <bottom>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.0" minWidth="282.0" prefWidth="301.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="299.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button fx:id="Nuevo" mnemonicParsing="false" onAction="#onNewAction" text="Nuevo">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add-32x32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="Eliminar" mnemonicParsing="false" onAction="#onEliminarAction" text="Eliminar">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/del-32x32.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </bottom>
+   <right>
+      <AnchorPane fx:id="detallePanel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="357.0" prefWidth="273.0" BorderPane.alignment="BOTTOM_RIGHT">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="8.0" layoutY="170.0" text="Seleccione un alumno  de la tabla de la izquierda" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
